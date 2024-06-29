@@ -52,7 +52,7 @@ func TestWriteNormalThroughPut(t *testing.T) {
 func ingestNormalScrapes(st *Storage, mrs []MetricRow, scrapeTotCount int) {
 	var wg sync.WaitGroup
 	scrapeBatch := 100
-	const second = 1000
+	const second = 100
 	var count atomic.Int64
 	count.Store(0)
 
@@ -121,7 +121,7 @@ func TestWriteZipfThroughPut(t *testing.T) {
 func ingestZipfScrapes(st *Storage, mrs []MetricRow, scrapeTotCount int) {
 	var wg sync.WaitGroup
 	scrapeBatch := 100
-	const second = 1000
+	const second = 100
 	var count atomic.Int64
 	count.Store(0)
 	for i := 0; i < scrapeTotCount; i += scrapeBatch {
